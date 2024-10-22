@@ -80,7 +80,7 @@ public class GiveCommandService {
         }
         give.accept();
 
-        SqsService.sendMessage(give.getItemId().getValue());
+        // SqsService.sendMessage(give.getItemId().getValue());
 
         giveRepository.saveAccepted(give);
     }
