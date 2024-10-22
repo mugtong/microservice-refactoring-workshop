@@ -1,0 +1,37 @@
+package app.anne.user.controller.dto;
+
+import java.time.Instant;
+import java.util.List;
+
+import app.anne.user.infrastructure.UserRecord;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Builder
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class UserResponse {
+    private String userId;
+    private String email;
+    private String name;
+    private String mobile;
+    private String description;
+    private String picture;
+    private List<String> locations;
+    private Instant updatedAt;
+
+
+    public UserResponse(UserRecord user) {
+        this.userId = user.getUserId();
+        this.email = user.getEmail();
+        this.name = user.getName();
+        this.mobile = user.getMobile();
+        this.description = user.getDescription();
+        this.picture = user.getPicture();
+        this.locations = user.getLocations();
+        this.updatedAt = user.getUpdatedAt();
+    }
+}

@@ -1,0 +1,12 @@
+aws:
+  profile: default
+  region: "us-west-2"
+  dynamodb:
+    table: anne-table
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: info
