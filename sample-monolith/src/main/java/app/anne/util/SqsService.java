@@ -12,7 +12,6 @@ public class SqsService {
         SqsClient sqsClient = SqsClient.builder()
             .httpClient(UrlConnectionHttpClient.create())
             .region(Region.US_WEST_2)
-            .credentialsProvider(EnvironmentVariableCredentialsProvider.create())
             .build();
 
         try {
