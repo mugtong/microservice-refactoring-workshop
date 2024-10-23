@@ -1,10 +1,10 @@
-FROM gradle:7.6.1-jdk17-alpine as builder
+FROM public.ecr.aws/docker/library/gradle:7.6.1-jdk17-alpine as builder
 WORKDIR /build
 
 COPY . /build
 RUN gradle build -x test --parallel
 
-FROM amazoncorretto:17-alpine3.17-jdk as deps
+FROM public.ecr.aws/docker/library/amazoncorretto:17-alpine3.17-jdk as deps
 #FROM gcr.io/distroless/java11-debian10 as distroless
 # required for strip-debug to work
 #RUN apk add --no-cache binutils
@@ -24,7 +24,7 @@ RUN mkdir /app/unpacked && \
     --module-path="./unpacked/BOOT-INF/lib/*" \
     ./anne.jar > /deps.info
 
-FROM amazoncorretto:17-alpine3.17-jdk as corretto-jdk
+FROM public.ecr.aws/docker/library/amazoncorretto:17-alpine3.17-jdk as corretto-jdk
 
 RUN apk add --no-cache binutils
 
@@ -40,7 +40,7 @@ RUN $JAVA_HOME/bin/jlink \
          --output /customjre
 
 # main app image
-FROM alpine:latest
+FROM public.ecr.aws/docker/library/alpine:3.20.3
 ENV JAVA_HOME=/jre
 ENV PATH="${JAVA_HOME}/bin:${PATH}"
 
