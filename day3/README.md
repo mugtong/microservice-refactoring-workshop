@@ -36,7 +36,9 @@ curl --location --request PUT 'http://localhost:8080/give/accept' \
 같은 요청의 중복 수행을 위해 생성된 데이터와 메시지를 삭제해줍니다.
 
 ## item-service 코드 수정
-
+SQS로부터 메시지를 수신하여 다음 작업을 수행
+- 기존 row의 status 변경
+- 새로운 row의 생성
 
 ## item-service 배포
 - Docker 이미지 빌드
