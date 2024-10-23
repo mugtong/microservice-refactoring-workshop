@@ -80,7 +80,9 @@ public class GiveCommandService {
         }
         give.accept();
 
-        // SqsService.sendMessage(give.getItemId().getValue());
+        // 현재 아이템의 상태를 수정하기 위해 ItemId 전달
+        // 새로운 아이템을 생성하기 위해 RequesterId 전달
+        SqsService.sendMessage(give.getItemId().getValue() + "," + give.getRequester().getValue());
 
         giveRepository.saveAccepted(give);
     }
