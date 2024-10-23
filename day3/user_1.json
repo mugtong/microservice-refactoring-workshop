@@ -1,0 +1,28 @@
+{
+     "PK":{
+        "S":"USER#9HG5qPFWcfM2U2gvCskTmBCo5QF3"
+     },
+     "SK":{
+        "S":"USER"
+     },
+     "email":{
+        "S":"yihsean@gmail.com"
+     },
+     "locs":{
+        "L":[
+           
+        ]
+     },
+     "name":{
+        "S":"Sean Lee"
+     },
+     "picture":{
+        "S":"https://lh3.googleusercontent.com/a/ACg8ocLhTb0110S-bVK0tXoQCW_YkK5MUIOU6mYMC7xSwfHB=s96-c"
+     },
+     "userId":{
+        "S":"9HG5qPFWcfM2U2gvCskTmBCo5QF3"
+     },
+     "ut":{
+        "S":"2024-08-30T12:58:39.390665200Z"
+     }
+  }
