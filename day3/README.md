@@ -38,7 +38,8 @@ curl --location --request PUT 'http://localhost:8080/give/accept' \
 ## item-service 코드 수정
 SQS로부터 메시지를 수신하여 다음 작업을 수행
 - 기존 row의 status 변경
-- 새로운 row의 생성
+- ~~새로운 row의 생성~~
+- 데이터 원복
 
 ## item-service 배포
 - Docker 이미지 빌드
@@ -53,7 +54,7 @@ SQS로부터 메시지를 수신하여 다음 작업을 수행
 ## 나눔 요청 재생성
 DynamoDB 테이블에서 다음 작업의 수행을 확인
 - 기존 row의 status 변경
-- 새로운 row의 생성
+- ~~새로운 row의 생성~~
 - 데이터 원복
 
 
