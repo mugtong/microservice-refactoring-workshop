@@ -1,0 +1,515 @@
+{
+	"info": {
+		"_postman_id": "d8b89c46-9746-4ac2-a7d5-8fde4ebbc5c3",
+		"name": "anne",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11734283"
+	},
+	"item": [
+		{
+			"name": "give",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"pm.collectionVariables.set(\"give_id\", jsonData.giveId);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"itemId\": \"01G9A9XT3X4F3XNT1Y5GS7XDJY\",\n    \"ownerId\": \"01G9A48AY3PT8AGJS269X64XV1\",\n    \"requesterId\": \"01G9A4FF0V0KACE6V7A821MK98\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/give",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"give"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "give accept",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"giveId\": \"{{give_id}}\",\n    \"ownerId\": \"01G9A48AY3PT8AGJS269X64XV1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/give/accept",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"give",
+						"accept"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reject/cancel give",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"giveId\": \"{{give_id}}\",\n    \"ownerId\": \"01G9A48AY3PT8AGJS269X64XV1\",\n    \"requesterId\": \"01G9A4FF0V0KACE6V7A821MK98\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/give",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"give"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "give list by owner",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/owner/:userid/give",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"owner",
+						":userid",
+						"give"
+					],
+					"variable": [
+						{
+							"key": "userid",
+							"value": "01G9A48AY3PT8AGJS269X64XV1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "give by owner",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/owner/:userid/give/:giveId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"owner",
+						":userid",
+						"give",
+						":giveId"
+					],
+					"variable": [
+						{
+							"key": "userid",
+							"value": "01G9A48AY3PT8AGJS269X64XV1"
+						},
+						{
+							"key": "giveId",
+							"value": "{{give_id}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "item_in_qr for owner",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.collectionVariables.set(\"item_in_qr\", responseBody);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/owner/:userid/give/:giveId/itemInQr",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"owner",
+						":userid",
+						"give",
+						":giveId",
+						"itemInQr"
+					],
+					"variable": [
+						{
+							"key": "userid",
+							"value": "01G9A48AY3PT8AGJS269X64XV1"
+						},
+						{
+							"key": "giveId",
+							"value": "{{give_id}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "give list by requester",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/requester/:userid/give",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"requester",
+						":userid",
+						"give"
+					],
+					"variable": [
+						{
+							"key": "userid",
+							"value": "01G9A4FF0V0KACE6V7A821MK98"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "give by requester",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/requester/:userid/give/:giveId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"requester",
+						":userid",
+						"give",
+						":giveId"
+					],
+					"variable": [
+						{
+							"key": "userid",
+							"value": "01G9A4FF0V0KACE6V7A821MK98"
+						},
+						{
+							"key": "giveId",
+							"value": "{{give_id}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "item_out_qr for requester",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.collectionVariables.set(\"item_out_qr\", responseBody);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/requester/:userid/give/:giveId/itemOutQr",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"requester",
+						":userid",
+						"give",
+						":giveId",
+						"itemOutQr"
+					],
+					"variable": [
+						{
+							"key": "userid",
+							"value": "01G9A4FF0V0KACE6V7A821MK98"
+						},
+						{
+							"key": "giveId",
+							"value": "{{give_id}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "item",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ownerId\": \"01G9A49HHKWSD886B5XXF0N1QQ\",\n    \"adult\": false,\n    \"author\": \"매트 헤이그 (지은이), 노진선 (옮긴이)\",\n    \"categoryId\":\"50919\",\n    \"categoryName\":\"국내도서>소설/시/희곡>영미소설\",\n    \"description\":\"true\",\n    \"imageUrl\":\"https://image.aladin.co.kr/product/29358/89/cover500/k782837210_2.jpg\",\n    \"isbn\":\"K782837210\",\n    \"isbn13\":\"9791191056556\",\n    \"link\":\"http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=293588949&amp;partner=openAPI&amp;start=api\",\n    \"pubDate\":\"2021-04-28\",\n    \"publisher\":\"인플루엔셜(주)\",\n    \"subTitle\":\"\",\n    \"title\":\"미드나잇 라이브러리 (1주년 스페셜 에디션)\",\n    \"type\":\"BOOK\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "item with owner_id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/owner/:userId/items/:itemId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"owner",
+						":userId",
+						"items",
+						":itemId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "01G9A48AY3PT8AGJS269X64XV1"
+						},
+						{
+							"key": "itemId",
+							"value": "01G9A9XT3X4F3XNT1Y5GS7XDJY"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "items of owner_id sorted last updated",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/owner/:userId/items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"owner",
+						":userId",
+						"items"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "01G9A48AY3PT8AGJS269X64XV1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[employee] check incoming give_item",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/warehouse/incoming?qr={{item_in_qr}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"warehouse",
+						"incoming"
+					],
+					"query": [
+						{
+							"key": "qr",
+							"value": "{{item_in_qr}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[employee] receive incoming give_item",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"qr\": \"{{item_in_qr}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/warehouse/incoming",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"warehouse",
+						"incoming"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[employee] check outgoing give_item",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/warehouse/outgoing?qr={{item_out_qr}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"warehouse",
+						"outgoing"
+					],
+					"query": [
+						{
+							"key": "qr",
+							"value": "{{item_out_qr}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "item_in_qr",
+			"value": "0"
+		},
+		{
+			"key": "item_out_qr",
+			"value": "0"
+		},
+		{
+			"key": "give_id",
+			"value": "0"
+		}
+	]
+}
