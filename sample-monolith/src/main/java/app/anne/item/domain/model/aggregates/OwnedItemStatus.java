@@ -4,4 +4,5 @@ public enum OwnedItemStatus {
     PUBLIC,
     PRIVATE,
     RESERVED,
+    AWAY
 }
