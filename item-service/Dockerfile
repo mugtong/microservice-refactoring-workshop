@@ -8,11 +8,11 @@ FROM amazoncorretto:17-alpine3.17-jdk as deps
 #FROM gcr.io/distroless/java11-debian10 as distroless
 # required for strip-debug to work
 #RUN apk add --no-cache binutils
-COPY --from=builder /build/build/libs/anne.jar /app/anne.jar
+COPY --from=builder /build/build/libs/item-service.jar /app/item-service.jar
 
 RUN mkdir /app/unpacked && \
     cd /app/unpacked && \
-    unzip ../anne.jar && \
+    unzip ../item-service.jar && \
     cd .. && \
     $JAVA_HOME/bin/jdeps \
     --ignore-missing-deps \
@@ -22,7 +22,7 @@ RUN mkdir /app/unpacked && \
     --multi-release 17 \
     --class-path="./unpacked/BOOT-INF/lib/*" \
     --module-path="./unpacked/BOOT-INF/lib/*" \
-    ./anne.jar > /deps.info
+    ./item-service.jar > /deps.info
 
 FROM amazoncorretto:17-alpine3.17-jdk as corretto-jdk
 
@@ -58,10 +58,10 @@ RUN mkdir /app && \
     chown -R $APPLICATION_USER /app
 
 
-COPY --chown=nobody:nobody --from=builder /build/build/libs/anne.jar /app/anne.jar
+COPY --chown=nobody:nobody --from=builder /build/build/libs/item-service.jar /app/item-service.jar
 WORKDIR /app
 
 EXPOSE 8080
 # root 대신 nobody 권한으로 실행
 USER nobody
-ENTRYPOINT ["java", "-jar", "-Djava.security.egd=file:/dev/./urandom", "-Dsun.net.inetaddr.ttl=0", "/app/anne.jar" ]
+ENTRYPOINT ["java", "-jar", "-Djava.security.egd=file:/dev/./urandom", "-Dsun.net.inetaddr.ttl=0", "/app/item-service.jar" ]
