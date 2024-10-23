@@ -42,6 +42,7 @@ SQS로부터 메시지를 수신하여 다음 작업을 수행
 
 ## item-service 배포
 - Docker 이미지 빌드
+- docker run 커맨드로 로컬 환경에서 테스트
 - Docker 이미지 푸시
 - Helm Chart 수정
 
