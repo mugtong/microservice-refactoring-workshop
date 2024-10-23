@@ -10,5 +10,25 @@ Console > DynamoDB
 Console > SQS
 
 ## SQS 메시지 전송 확인
-`sample-monolith/src/main/java/app/anne/give/application/GiveCommandService.java` 확인
+`sample-monolith/src/main/java/app/anne/give/application/GiveCommandService.java[https://github.com/seanlee10/microservice-refactoring-workshop/blob/c6e9ed751481d798e6b02095f7eff5bf2807be9d/sample-monolith/src/main/java/app/anne/give/application/GiveCommandService.java#L83]` 주석 해제
+
+```
+gradle bootRun
+# 나눔 요청 POST /give
+curl --location 'http://localhost:8080/give' \
+--header 'Content-Type: application/json' \
+--data '{
+    "itemId": "01G9CS5473GMJTK9SBE2CYK65K",
+    "ownerId": "9HG5qPFWcfM2U2gvCskTmBCo5QF3",
+    "requesterId": "9NFzMZ0Lu9PmlkdlKensbSnTklE2"
+}'
+
+# 나눔 수락 PUT /give/accept
+curl --location --request PUT 'http://localhost:8080/give/accept' \
+--header 'Content-Type: application/json' \
+--data '{
+    "giveId": "01JAVC3WEMY160JKZCYPWN3J41",
+    "ownerId": "9HG5qPFWcfM2U2gvCskTmBCo5QF3"
+}'
+```
 
