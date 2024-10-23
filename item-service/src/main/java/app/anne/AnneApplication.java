@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class AnneApplication {
 
 	public static void main(String[] args) {
+		System.setProperty("https.protocols", "TLSv1.2");
 		SpringApplication.run(AnneApplication.class, args);
 	}
 
