@@ -1,0 +1,83 @@
+{
+   "PK":{
+      "S":"ITEM#01HHY4ZAH8XH8TNXBRS2TB0F5B"
+   },
+   "SK":{
+      "S":"ITEM"
+   },
+   "adult":{
+      "BOOL":false
+   },
+   "author":{
+      "S":"한동일 (지은이)"
+   },
+   "categoryId":{
+      "S":"51378"
+   },
+   "categoryName":{
+      "S":"국내도서>인문학>교양 인문학"
+   },
+   "description":{
+      "S":"한국인 최초, 동아시아 최초 바티칸 대법원 로타 로마나 변호사이자 가톨릭 사제인 한동일 교수가 2010년부터 2016년까지 서강대학교에서 진행했던 강의를 책으로 옮겼다. 책 말미에는 수업을 들었던 제자들이 책 출간을 기념해 보내온 편지를 함께 실었다."
+   },
+   "GSI1_PK":{
+      "S":"USER#9NFzMZ0Lu9PmlkdlKensbSnTklE2#ITEM"
+   },
+   "GSI1_SK":{
+      "S":"2023-12-18T09:44:04.905369326Z"
+   },
+   "GSI2_PK":{
+      "S":"FEED"
+   },
+   "GSI2_SK":{
+      "S":"2023-12-18T09:44:04.905369326Z"
+   },
+   "imageUrl":{
+      "S":"https://image.aladin.co.kr/product/11217/32/cover500/896596220x_1.jpg"
+   },
+   "isbn":{
+      "S":"896596220X"
+   },
+   "isbn13":{
+      "S":"9788965962205"
+   },
+   "itemId":{
+      "S":"01HHY4ZAH8XH8TNXBRS2TB0F5B"
+   },
+   "link":{
+      "S":"http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=112173214&amp;partner=openAPI&amp;start=api"
+   },
+   "ownerId":{
+      "S":"9NFzMZ0Lu9PmlkdlKensbSnTklE2"
+   },
+   "ownerImageUrl":{
+      "S":"https://lh3.googleusercontent.com/a/ACg8ocIhsB9MQ0jEr217QdFx-gtFp8nBa8LiWSjVdk9AMP2L=s96-c"
+   },
+   "ownerName":{
+      "S":"Eunju Rho"
+   },
+   "pubDate":{
+      "S":"2017-06-30"
+   },
+   "publisher":{
+      "S":"흐름출판"
+   },
+   "stat":{
+      "S":"PUBLIC"
+   },
+   "status":{
+      "S":""
+   },
+   "subTitle":{
+      "S":"지적이고 아름다운 삶을 위한"
+   },
+   "title":{
+      "S":"라틴어 수업"
+   },
+   "type":{
+      "S":"BOOK"
+   },
+   "ut":{
+      "S":"2023-12-18T09:44:04.905369326Z"
+   }
+}
