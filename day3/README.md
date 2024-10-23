@@ -43,13 +43,18 @@ SQS로부터 메시지를 수신하여 다음 작업을 수행
 ## item-service 배포
 - Docker 이미지 빌드
 - docker run 커맨드로 로컬 환경에서 테스트
+- 데이터 원복
 - Docker 이미지 푸시
 - Helm Chart 수정
+- ArgoCD Sync로 재배포
+- 로컬환경의 gradle bootRun 종료
+- Port-forwarding으로 작동 확인
 
 ## 나눔 요청 재생성
 DynamoDB 테이블에서 다음 작업의 수행을 확인
 - 기존 row의 status 변경
 - 새로운 row의 생성
+- 데이터 원복
 
 
 
