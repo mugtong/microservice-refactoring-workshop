@@ -76,8 +76,9 @@ SQS로부터 메시지를 수신하여 다음 작업을 수행
 - 데이터 원복
 - Docker 이미지 푸시
 - Helm Chart 수정
+- EC2 Instance Role에 `AmazonSQSFullAccess` 정책 부여
 - ArgoCD Sync로 재배포
-- 로컬환경의 gradle bootRun 종료
+- 로컬환경의 포트 8080 사용 중 여부 확인
 - Port-forwarding으로 작동 확인
 
 ## 나눔 요청 재생성
