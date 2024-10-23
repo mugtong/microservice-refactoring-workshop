@@ -1,0 +1,23 @@
+{
+     "PK":{
+        "S":"USER#9NFzMZ0Lu9PmlkdlKensbSnTklE2"
+     },
+     "SK":{
+        "S":"USER"
+     },
+     "email":{
+        "S":"example@example.com"
+     },
+     "name":{
+        "S":"John Doe"
+     },
+     "picture":{
+        "S":"https://lh3.googleusercontent.com/a/ACg8ocIhsB9MQ0jEr217QdFx-gtFp8nBa8LiWSjVdk9AMP2L=s96-c"
+     },
+     "userId":{
+        "S":"9NFzMZ0Lu9PmlkdlKensbSnTklE2"
+     },
+     "ut":{
+        "S":"2024-01-16T14:03:34.539342919Z"
+     }
+  }
