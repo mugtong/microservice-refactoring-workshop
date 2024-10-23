@@ -43,7 +43,37 @@ SQS로부터 메시지를 수신하여 다음 작업을 수행
 
 ## item-service 배포
 - Docker 이미지 빌드
+  ```
+  cd ~/environment/microservice-refactoring-workshop/item-service
+  docker build -t item-service:v1 .
+
+  cd ~/environment/microservice-refactoring-workshop/monolith
+  docker build -t anne-api:v1 .
+  ```
 - docker run 커맨드로 로컬 환경에서 테스트
+  ```
+  docker run -dt -p 8080:8080 <account_id>.dkr.ecr.us-west-2.amazonaws.com/anne-api:v1
+
+  # 나눔 요청 POST /give
+    curl --location 'http://localhost:8080/give' \
+    --header 'Content-Type: application/json' \
+    --data '{
+        "itemId": "01G9CS5473GMJTK9SBE2CYK65K",
+        "ownerId": "9HG5qPFWcfM2U2gvCskTmBCo5QF3",
+        "requesterId": "9NFzMZ0Lu9PmlkdlKensbSnTklE2"
+    }'
+    
+    # 나눔 수락 PUT /give/accept
+    curl --location --request PUT 'http://localhost:8080/give/accept' \
+    --header 'Content-Type: application/json' \
+    --data '{
+        "giveId": "01JAVC3WEMY160JKZCYPWN3J41",
+        "ownerId": "9HG5qPFWcfM2U2gvCskTmBCo5QF3"
+    }'
+  
+
+  docker run -dt -p 8081:8080 <account_id>.dkr.ecr.us-west-2.amazonaws.com/item-service:v1
+  ```
 - 데이터 원복
 - Docker 이미지 푸시
 - Helm Chart 수정
