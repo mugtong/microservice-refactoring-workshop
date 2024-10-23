@@ -71,7 +71,7 @@ SQS로부터 메시지를 수신하여 다음 작업을 수행
       "ownerId": "9HG5qPFWcfM2U2gvCskTmBCo5QF3"
   }'
 
-  docker run -dt -p 8081:8080 <account_id>.dkr.ecr.us-west-2.amazonaws.com/item-service:v1
+  docker run -dt -p 8082:8080 <account_id>.dkr.ecr.us-west-2.amazonaws.com/item-service:v1
   ```
 - 데이터 원복
 - Docker 이미지 푸시
