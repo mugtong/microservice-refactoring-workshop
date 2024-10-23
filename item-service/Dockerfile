@@ -1,7 +1,7 @@
 FROM public.ecr.aws/docker/library/gradle:7.6.1-jdk17-alpine as builder
 WORKDIR /build
 
-COPY ./sample-monolith /build
+COPY ./item-service /build
 RUN gradle build -x test --parallel
 
 FROM public.ecr.aws/docker/library/amazoncorretto:17-alpine3.17-jdk as deps
