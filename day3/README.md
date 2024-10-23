@@ -10,7 +10,7 @@ Console > DynamoDB
 Console > SQS
 
 ## SQS 메시지 전송 확인
-`sample-monolith/src/main/java/app/anne/give/application/GiveCommandService.java[https://github.com/seanlee10/microservice-refactoring-workshop/blob/c6e9ed751481d798e6b02095f7eff5bf2807be9d/sample-monolith/src/main/java/app/anne/give/application/GiveCommandService.java#L83]` 주석 해제
+sample-monolith/src/main/java/app/anne/give/application/GiveCommandService.java#L83 확인
 
 ```
 gradle bootRun
@@ -31,4 +31,13 @@ curl --location --request PUT 'http://localhost:8080/give/accept' \
     "ownerId": "9HG5qPFWcfM2U2gvCskTmBCo5QF3"
 }'
 ```
+
+## SQS 메시지 삭제 및 DynamoDB 데이터 삭제
+같은 요청의 중복 수행을 위해 생성된 데이터와 메시지를 삭제해줍니다.
+
+## item-service 코드 수정
+
+
+
+
 
