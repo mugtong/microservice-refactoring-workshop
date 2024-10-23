@@ -92,4 +92,6 @@ DynamoDB 테이블에서 다음 작업의 수행을 확인
 ASH (Automated Security Helper)를 통해 코드 스캔
 https://github.com/awslabs/automated-security-helper
 
+## AWS CodeBuild
+Source Repository의 변경을 감지하여 이미지 빌드/푸시
 
